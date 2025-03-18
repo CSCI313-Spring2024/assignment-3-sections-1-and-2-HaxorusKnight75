@@ -1,12 +1,12 @@
-import {Component, Input} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {Housinglocation} from '../housinglocation';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-housing-location',
-  imports: [],
+  standalone: true, // Enables standalone component usage
+  imports: [CommonModule], // Ensures common directives are available
   templateUrl: './housing-location.component.html',
-  styleUrl: './housing-location.component.css'
+  styleUrls: ['./housing-location.component.css'] // Fixed incorrect property name
 })
 export class HousingLocationComponent {
   @Input() housingLocation!: HousingLocation;
@@ -20,4 +20,4 @@ export interface HousingLocation {
   availableUnits: number;
   wifi: boolean;
   laundry: boolean;
- }
+}
