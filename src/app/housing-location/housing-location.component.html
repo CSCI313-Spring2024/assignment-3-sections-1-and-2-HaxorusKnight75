@@ -1,13 +1,18 @@
 <section class="listing">
     <img
-    class="listing-photo"
-    [src]="housingLocation.photo"
-    alt="Exterior photo of {{ housingLocation.name }}"
-    crossorigin
+        class="listing-photo"
+        [src]="housingLocation?.photo"
+        [alt]="'Exterior photo of ' + (housingLocation?.name || 'this property')"
+        crossorigin
     />
-    <h5 class="listing-heading">{{ housingLocation.name }}</h5>
+    <h5 class="listing-heading">{{ housingLocation?.name }}</h5>
     <p class="listing-location">
-    {{ housingLocation.city }}, {{ housingLocation.state }}
-    </p><!-- <a routerLink="details">Learn More</a> -->
-    <a [routerLink]="['/details', housingLocation.id]">Learn More</a>
+        {{ housingLocation?.city }}, {{ housingLocation?.state }}
+    </p>
+    <a 
+        [routerLink]="['/details', housingLocation?.id]" 
+        title="View details about {{ housingLocation?.name }}"
+    >
+        Learn More
+    </a>
 </section>
