@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-housing-location',
   standalone: true, // Enables standalone component usage
-  imports: [CommonModule], // Ensures common directives are available
+  imports: [RouterModule, RouterLink, RouterOutlet], // Ensures common directives are available
   templateUrl: './housing-location.component.html',
   styleUrls: ['./housing-location.component.css'] // Fixed incorrect property name
 })
